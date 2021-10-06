@@ -109,45 +109,87 @@
 	//	✔️ Appends all variables to "pokeCard" before appending "pokeCard" to "pokeContainer"
 		// 	Use append() or appendChild() as necessary
 
+	
+// 🚧 Break Out Activity 2: Creating / Reading / Updating DOM Elements
+
+	// 1️⃣ Add the following capabilities to renderPokemon:
+	
+	//  ✔️ Creates an "h3" element for each Pokemon and stores the element in a variable (pokeLikes)
+	// 	Use textContent() to fill in the heading with "Likes: "
+	
+	//  ✔️ Creates an "h5" element for each Pokemon and stores the element in a variable (likesNum)
+	// 	Assign likesNum a className of "likes-num"
+	// 	Use textContent() to fill in the heading with the Pokemon's number of likes
+	
+	//  ✔️ Creates a "button" element for each Pokemon and stores the element in a variable (likesBttn)
+	// 	Assign likesBttn a className of "likes-bttn"
+	// 	Use textContent() to fill in the button with a label, "♥"
+	
+	//  ✔️ Creates a "button" element for each Pokemon and stores the element in a variable (deleteBttn)
+	// 	Assign deleteBttn a className of "delete-bttn"
+	// 	Use textContent() to fill in the button with a label, "Delete"
+	
+	//	✔️ Appends all variables to "pokeCard" before appending "pokeCard" to "pokeContainer"
+	// 	Use append() as necessary
+	
 	// 	💡 Use Chrome Dev Tools to view changes being made to the DOM
-
+	
 	// 	💡 Take a look at "styles.css" to see how the DOM Elements we're building out correspond to CSS class and ID selectors.
-
+	
 	// 	✨ BONUS: Try to reduce redudancy (DRY Principle) in your code through the use of JS functions and variables.
+
 	const renderPokemon = pokemon => {
 		
 		// grouping variable assignments helps to improve readability
 		const pokeCard = document.createElement("div");
 		const pokeImg = document.createElement("img");
 		const pokeName = document.createElement("h3");
-
+		
 		// --------- Break Out 1 --------- //
 		
 		// // set pokeCard attributes
 		pokeCard.id = `poke-${pokemon.id}`;
 		// pokeCard.setAttribute("id", `poke-${pokemon.id}`)
 		pokeCard.className = "poke-card";
-				
+		
 		// // set pokeImg attributes
 		pokeImg.src = pokemon.img;
 		pokeImg.alt = pokemon.name;
-
+		
 		// // set pokeName attributes
 		pokeName.innerText = pokemon.name;
-
-		// append DOM elements to pokeCard
-		pokeCard.append(pokeImg, pokeName);
 		
-		// append pokeCard to pokeContainer
+		pokeCard.append(pokeImg, pokeName);
 		pokeContainer.append(pokeCard);
+		
+		
+		// --------- Break Out 2 --------- //
+		
+		
 	};
 
+	// 	💡 Use Chrome Dev Tools to view changes being made to the DOM
 
+	// 	💡 Take a look at "styles.css" to see how the DOM Elements we're building out correspond to CSS class and ID selectors.
+
+	// 	✨ BONUS: Try to reduce redudancy (DRY Principle) in your code through the use of JS functions and variables.
+	
+	// 🚧 Break Out Activity 2: Creating / Reading / Updating Elements
+	
+	// 🚨 Comment out any conflicting code above before proceeding.
 
 	// ✅ Check Answer: 
 	const init = () => {
 		// pokemon.forEach(renderPokemon);
 		pokemon.forEach(poke => renderPokemon(poke));
 	}
-
+	
 	init();
+
+
+	// Break out activity #3
+	// Add a h2 with text "Add a Pokemon" right after the <h1> with text "Build a Pokédex"
+	// Change the submit button to be red
+		// Change all instances of the word "Delete" to "Destroy"
+		// Change the second pokemon's name to be "Hack-Attack"
+		// Change the last pokemon's image to any image of your liking
